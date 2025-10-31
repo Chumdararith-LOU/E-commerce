@@ -77,19 +77,43 @@ const categories = [
     Card_color: '#FFF3FF',
   },
 ]
+
+const promotion = [
+  {
+    title: 'Everyday Fresh & Clean with Our Products',
+    buttonText: 'Shop Now →',
+    image: Onion,
+    Card_color: '#F0E8D5',
+    buttonColor: '#3BB77E',
+  },
+  {
+    title: 'Make your Breakfast Healthy and Easy',
+    buttonText: 'Shop Now →',
+    image: Strawberry_Milk,
+    Card_color: '#F3E8E8',
+    buttonColor: '#3BB77E',
+  },
+  {
+    title: 'The best Organic Products Online',
+    buttonText: 'Shop Now →',
+    image: Vegetable,
+    Card_color: '#E7EAF3',
+    buttonColor: '#FDC040',
+  },
+]
 </script>
 
 <template>
   <div class="app-container">
     <div class="category-section">
-        <CategoryComponent
-          v-for="(category, index) in categories"
-          :key="index"
-          :name="category.name"
-          :image="category.image"
-          :Item_count="category.Item_count"
-          :Card_color="category.Card_color"
-        />
+      <CategoryComponent
+        v-for="(category, index) in categories"
+        :key="index"
+        :name="category.name"
+        :image="category.image"
+        :Item_count="category.Item_count"
+        :Card_color="category.Card_color"
+      />
     </div>
 
     <div class="promotion-section">
@@ -97,21 +121,21 @@ const categories = [
         title="Everyday Fresh & Clean with Our Products"
         buttonText="Shop Now →"
         :image="Onion"
-        Card_color = "#F0E8D5"
+        Card_color="#F0E8D5"
         buttonColor="#3BB77E"
       />
       <PromotionComponent
         title="Make your Breakfast Healthy and Easy"
         buttonText="Shop Now →"
         :image="Strawberry_Milk"
-        Card_color = "#F3E8E8"
+        Card_color="#F3E8E8"
         buttonColor="#3BB77E"
       />
       <PromotionComponent
         title="The best Organic Products Online"
         buttonText="Shop Now →"
         :image="Vegetable"
-        Card_color = "#E7EAF3"
+        Card_color="#E7EAF3"
         buttonColor="#FDC040"
       />
     </div>
@@ -125,7 +149,7 @@ const categories = [
   justify-content: space-between;
   gap: 4em;
   padding: 20px;
-  max-width: 1556px; 
+  max-width: 1556px;
   margin: 0 auto;
 }
 
@@ -133,13 +157,13 @@ const categories = [
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%; 
+  width: 100%;
 }
 
 .promotion-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 100%;
 }
 </style>
