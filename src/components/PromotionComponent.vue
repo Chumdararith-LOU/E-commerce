@@ -14,7 +14,7 @@ defineProps<{
   <div class="promotion-card" :style="{ backgroundColor: Card_color }">
     <div id="title">
       <h2>{{ title }}</h2>
-      <ButtonComponent :text="buttonText" :color="buttonColor" />
+      <ButtonComponent :text="buttonText" :color="buttonColor" :title="title"/>
     </div>
     <div class="card-image-placeholder"></div>
     <div class="promotion-image"><img :src="image" :alt="title" /></div>

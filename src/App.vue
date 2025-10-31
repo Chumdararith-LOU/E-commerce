@@ -78,7 +78,7 @@ const categories = [
   },
 ]
 
-const promotion = [
+const promotions = [
   {
     title: 'Everyday Fresh & Clean with Our Products',
     buttonText: 'Shop Now →',
@@ -118,26 +118,15 @@ const promotion = [
 
     <div class="promotion-section">
       <PromotionComponent
-        title="Everyday Fresh & Clean with Our Products"
-        buttonText="Shop Now →"
-        :image="Onion"
-        Card_color="#F0E8D5"
-        buttonColor="#3BB77E"
+        v-for="(promotion, index) in promotions"
+        :key="index"
+        :title="promotion.title"
+        :buttonText="promotion.buttonText"
+        :image="promotion.image"
+        :Card_color="promotion.Card_color"
+        :buttonColor="promotion.buttonColor"
       />
-      <PromotionComponent
-        title="Make your Breakfast Healthy and Easy"
-        buttonText="Shop Now →"
-        :image="Strawberry_Milk"
-        Card_color="#F3E8E8"
-        buttonColor="#3BB77E"
-      />
-      <PromotionComponent
-        title="The best Organic Products Online"
-        buttonText="Shop Now →"
-        :image="Vegetable"
-        Card_color="#E7EAF3"
-        buttonColor="#FDC040"
-      />
+      
     </div>
   </div>
 </template>

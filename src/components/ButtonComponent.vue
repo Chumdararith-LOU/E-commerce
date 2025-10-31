@@ -1,16 +1,19 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
     text: string, 
-    color: string
+    color: string,
+    title: string
 }>()
 
-
-
+function shopNow(){
+  // Use props.title to access the title passed from PromotionComponent
+  alert("Let's shop " + props.title)
+}
 </script>
 
 <template>
-  <button class="promo-button" :style="{ backgroundColor: color }">
-    {{ text }}
+  <button @click="shopNow" class="promo-button" :style="{ backgroundColor: props.color }">
+    {{ props.text }}
   </button>
 </template>
 
