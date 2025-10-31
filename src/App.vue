@@ -1,103 +1,152 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import CategoryComponent from './components/CategoryComponent.vue'
 import PromotionComponent from './components/PromotionComponent.vue'
-import Apple from './assets/Apple.png'
-import Black_plum from './assets/Black Plum.png'
-import Burger from './assets/Burger.png'
-import Cabbage from './assets/Cabbage.png'
-import Cake_Milk from './assets/Cake Mild.png'
-import Kiwi from './assets/Kiwi.png'
-import Onion from './assets/Onion.jpg'
-import Orange from './assets/Orange.png'
-import Peach from './assets/Peach.png'
-import Snack from './assets/Snack.png'
-import Strawberry_Milk from './assets/Strawberrry Milk.png'
-import Vegetable from './assets/Vegetable.jpg'
-import Headphone from './assets/Headphone.png'
+// import Apple from './assets/Apple.png'
+// import Black_plum from './assets/Black Plum.png'
+// import Burger from './assets/Burger.png'
+// import Cabbage from './assets/Cabbage.png'
+// import Cake_Milk from './assets/Cake Mild.png'
+// import Kiwi from './assets/Kiwi.png'
+// import Onion from './assets/Onion.jpg'
+// import Orange from './assets/Orange.png'
+// import Peach from './assets/Peach.png'
+// import Snack from './assets/Snack.png'
+// import Strawberry_Milk from './assets/Strawberrry Milk.png'
+// import Vegetable from './assets/Vegetable.jpg'
+// import Headphone from './assets/Headphone.png'
+import axios from 'axios'
 
-const categories = [
-  {
-    name: 'Cake & Milk',
-    image: Burger,
-    Item_count: 14,
-    Card_color: '#F2FCE4',
-  },
-  {
-    name: 'Peach',
-    image: Peach,
-    Item_count: 17,
-    Card_color: '#FFFCEB',
-  },
-  {
-    name: 'Organic Kiwi',
-    image: Kiwi,
-    Item_count: 21,
-    Card_color: '#ECFFEC',
-  },
-  {
-    name: 'Red Apple',
-    image: Apple,
-    Item_count: 68,
-    Card_color: '#FEEFEA',
-  },
-  {
-    name: 'Snack',
-    image: Snack,
-    Item_count: 34,
-    Card_color: '#FFF3EB',
-  },
-  {
-    name: 'Black Plum',
-    image: Black_plum,
-    Item_count: 25,
-    Card_color: '#FFF3FF',
-  },
-  {
-    name: 'Vegetables',
-    image: Cabbage,
-    Item_count: 65,
-    Card_color: '#F2FCE4',
-  },
-  {
-    name: 'Headphone',
-    image: Headphone,
-    Item_count: 33,
-    Card_color: '#FFFCEB',
-  },
-  {
-    name: 'Cake & Milk',
-    image: Cake_Milk,
-    Item_count: 54,
-    Card_color: '#F2FCE4',
-  },
-  {
-    name: 'Orange',
-    image: Orange,
-    Item_count: 63,
-    Card_color: '#FFF3FF',
-  },
-]
+// const categories = [
+//   {
+//     name: 'Cake & Milk',
+//     image: Burger,
+//     Item_count: 14,
+//     Card_color: '#F2FCE4',
+//   },
+//   {
+//     name: 'Peach',
+//     image: Peach,
+//     Item_count: 17,
+//     Card_color: '#FFFCEB',
+//   },
+//   {
+//     name: 'Organic Kiwi',
+//     image: Kiwi,
+//     Item_count: 21,
+//     Card_color: '#ECFFEC',
+//   },
+//   {
+//     name: 'Red Apple',
+//     image: Apple,
+//     Item_count: 68,
+//     Card_color: '#FEEFEA',
+//   },
+//   {
+//     name: 'Snack',
+//     image: Snack,
+//     Item_count: 34,
+//     Card_color: '#FFF3EB',
+//   },
+//   {
+//     name: 'Black Plum',
+//     image: Black_plum,
+//     Item_count: 25,
+//     Card_color: '#FFF3FF',
+//   },
+//   {
+//     name: 'Vegetables',
+//     image: Cabbage,
+//     Item_count: 65,
+//     Card_color: '#F2FCE4',
+//   },
+//   {
+//     name: 'Headphone',
+//     image: Headphone,
+//     Item_count: 33,
+//     Card_color: '#FFFCEB',
+//   },
+//   {
+//     name: 'Cake & Milk',
+//     image: Cake_Milk,
+//     Item_count: 54,
+//     Card_color: '#F2FCE4',
+//   },
+//   {
+//     name: 'Orange',
+//     image: Orange,
+//     Item_count: 63,
+//     Card_color: '#FFF3FF',
+//   },
+// ]
 
-const promotions = [
-  {
-    title: 'Everyday Fresh & Clean with Our Products',
-    image: Onion,
-    Card_color: '#F0E8D5',
-    buttonColor: '#3BB77E',
-  },
-  {
-    title: 'Make your Breakfast Healthy and Easy',
-    image: Strawberry_Milk,
-    Card_color: '#F3E8E8',
-    buttonColor: '#3BB77E',
-  },
-  {
-    title: 'The best Organic Products Online',
-    image: Vegetable,
-    Card_color: '#E7EAF3',
-    buttonColor: '#FDC040',
-  },
-]
+// const promotions = [
+//   {
+//     title: 'Everyday Fresh & Clean with Our Products',
+//     image: Onion,
+//     Card_color: '#F0E8D5',
+//     buttonColor: '#3BB77E',
+//   },
+//   {
+//     title: 'Make your Breakfast Healthy and Easy',
+//     image: Strawberry_Milk,
+//     Card_color: '#F3E8E8',
+//     buttonColor: '#3BB77E',
+//   },
+//   {
+//     title: 'The best Organic Products Online',
+//     image: Vegetable,
+//     Card_color: '#E7EAF3',
+//     buttonColor: '#FDC040',
+//   },
+// ]
+
+interface Category {
+  id: number;
+  name: string;
+  image: string;
+  productCount: number;
+  color: string;
+}
+
+interface Promotion {
+  id: number;
+  title: string;
+  image: string;
+  color: string;
+  buttonColor: string;
+}
+
+const categories = ref<Category[]>([]);
+const promotions = ref<Promotion[]>([]);
+
+function fetchCategories (){
+  axios.get('http://localhost:3000/api/categories')
+  .then(response => {
+    categories.value = response.data;
+    console.log(categories); 
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}
+
+function fetchPromotion (){
+  axios.get('http://localhost:3000/api/promotions')
+  .then(response => {
+    promotions.value = response.data;
+    console.log(promotions); 
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}
+
+onMounted(() => {
+  fetchCategories();
+  fetchPromotion();
+})
+
 </script>
 
 <template>
@@ -107,9 +156,9 @@ const promotions = [
         v-for="(category, index) in categories"
         :key="index"
         :name="category.name"
-        :image="category.image"
-        :Item_count="category.Item_count"
-        :Card_color="category.Card_color"
+        :image="'http://localhost:3000/' + category.image"
+        :Item_count="category.productCount"
+        :Card_color="category.color"
       />
     </div>
 
@@ -119,8 +168,8 @@ const promotions = [
         :key="index"
         :title="promotion.title"
         :buttonText="'Shop Now →'"
-        :image="promotion.image"
-        :Card_color="promotion.Card_color"
+        :image="'http://localhost:3000/' + promotion.image"
+        :Card_color="promotion.color"
         :buttonColor="promotion.buttonColor"
       />
       

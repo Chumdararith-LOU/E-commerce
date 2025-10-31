@@ -8,6 +8,7 @@ defineProps<{
   Card_color: string
   buttonColor: string
 }>()
+
 </script>
 
 <template>
