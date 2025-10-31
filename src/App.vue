@@ -81,21 +81,18 @@ const categories = [
 const promotions = [
   {
     title: 'Everyday Fresh & Clean with Our Products',
-    buttonText: 'Shop Now →',
     image: Onion,
     Card_color: '#F0E8D5',
     buttonColor: '#3BB77E',
   },
   {
     title: 'Make your Breakfast Healthy and Easy',
-    buttonText: 'Shop Now →',
     image: Strawberry_Milk,
     Card_color: '#F3E8E8',
     buttonColor: '#3BB77E',
   },
   {
     title: 'The best Organic Products Online',
-    buttonText: 'Shop Now →',
     image: Vegetable,
     Card_color: '#E7EAF3',
     buttonColor: '#FDC040',
@@ -121,7 +118,7 @@ const promotions = [
         v-for="(promotion, index) in promotions"
         :key="index"
         :title="promotion.title"
-        :buttonText="promotion.buttonText"
+        :buttonText="'Shop Now →'"
         :image="promotion.image"
         :Card_color="promotion.Card_color"
         :buttonColor="promotion.buttonColor"
