@@ -21,8 +21,8 @@ onMounted(async () => {
   console.log("Products in 'Fruits':", fruitProducts);
 
   // Test 3: getProductsByCategory
-  const cat1Products = productStore.getProductsByCategory(1);
-  console.log("Products in Category 2:", cat1Products);
+  const catProducts = productStore.getProductsByCategory(2);
+  console.log("Products in Category 2:", catProducts);
 
   // Test 4: getPopularProducts
   const popular = productStore.getPopularProducts;
