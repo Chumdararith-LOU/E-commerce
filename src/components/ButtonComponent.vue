@@ -6,7 +6,6 @@ const props = defineProps<{
 }>()
 
 function shopNow(){
-  // Use props.title to access the title passed from PromotionComponent
   alert("Let's shop " + props.title)
 }
 </script>
