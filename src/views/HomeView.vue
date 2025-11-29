@@ -96,6 +96,7 @@ onMounted(async () => {
       <ProductComponent
         v-for="(product, index) in filteredProducts"
         :key="index"
+        :id="product.id"
         :name="product.name"
         :image="product.image"
         :category="product.group"

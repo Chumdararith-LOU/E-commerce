@@ -2,6 +2,12 @@
 import SearchBoxComponent from './SearchBoxComponent.vue'
 import logoImg from '../assets/Logo.png'
 import hotlineImg from '../assets/Hotline.png'
+import shopping from '../assets/fi-rs-shopping-cart.svg'
+import user from '../assets/fi-rs-user.svg'
+import heart from '../assets/fi-rs-heart.svg'
+import compare from '../assets/icon-compare 1.svg'
+import flame from '../assets/fi-rs-flame 1.svg'
+
 </script>
 
 <template>
@@ -17,22 +23,22 @@ import hotlineImg from '../assets/Hotline.png'
 
       <div class="user-actions">
         <div class="action-item">
-          <i class="fa-regular fa-user"></i>
+          <i class="fa-regular fa-user"><img :src="user" alt=""></i>
           <span class="action-label">Account</span>
         </div>
 
         <div class="action-item">
-          <i class="fa-solid fa-arrows-rotate"></i>
+          <i class="fa-solid fa-arrows-rotate"><img :src="compare" alt=""></i>
           <span class="action-label">Compare</span>
         </div>
 
         <div class="action-item">
-          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-heart"><img :src="heart" alt=""></i>
           <span class="action-label">Wishlist</span>
         </div>
 
         <div class="action-item">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-cart-shopping"><img :src="shopping" alt=""></i>
           <span class="action-label">Cart</span>
         </div>
       </div>
@@ -49,7 +55,7 @@ import hotlineImg from '../assets/Hotline.png'
 
       <nav class="main-nav">
         <router-link to="/categories/1" class="nav-link">
-          <i class="fa-solid fa-fire text-brand-green mr-1"></i> Hot Deals
+          <i class="fa-solid fa-fire text-brand-green mr-1"><img :src="flame" alt=""></i> Hot Deals
         </router-link>
         <router-link to="/" class="nav-link">Home</router-link>
 

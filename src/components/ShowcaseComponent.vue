@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import bgPattern from '@/assets/Background Showcase.png'
 import applesImg from '@/assets/Apples.png'
-import HeaderComponent from './HeaderComponent.vue'
 </script>
 
 <template>
-  <HeaderComponent />
   <div class="showcase-container" :style="{ backgroundImage: `url(${bgPattern})` }">
     <div class="content">
       <h1>Don't miss amazing<br />grocery deals</h1>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import bgPattern from '../assets/Background2.png'
-import HeaderComponent from './HeaderComponent.vue'
 
 defineProps<{
   title: string
@@ -9,7 +8,6 @@ defineProps<{
 </script>
 
 <template>
-  <HeaderComponent />
   <div class="page-header">
     <div class="content">
       <h1>{{ title }}</h1>

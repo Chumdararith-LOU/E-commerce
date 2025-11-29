@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router' // 1. Import useRouter
 
 const props = defineProps<{
+  id: number // 2. Add ID to props
   name: string
   image: string
   category: string
@@ -13,6 +15,16 @@ const props = defineProps<{
   instock: number
   group: string
 }>()
+
+const router = useRouter() // 3. Get router instance
+
+// 4. Create navigation function
+function goToDetail() {
+  router.push({ 
+    name: 'product', 
+    params: { productId: props.id } 
+  })
+}
 
 const imageUrl = computed(() => {
   if (props.image.startsWith('[')) {
@@ -54,7 +66,7 @@ const badgeClass = computed(() => {
 </script>
 
 <template>
-  <div class="product-card">
+  <div class="product-card" @click="goToDetail">
     <div v-if="badge" class="badge" :class="badgeClass">
       {{ badge.text }}
     </div>
@@ -89,7 +101,7 @@ const badgeClass = computed(() => {
             <span class="discount-price">${{ price.toFixed(2) }}</span>
           </template>
         </div>
-        <button class="add-btn">Add +</button>
+        <button class="add-btn" @click.stop>Add +</button>
       </div>
     </div>
   </div>
@@ -110,6 +122,7 @@ const badgeClass = computed(() => {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+  cursor: pointer; /* 6. Add cursor pointer so user knows it's clickable */
 }
 
 .product-card:hover {

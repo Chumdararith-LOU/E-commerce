@@ -37,6 +37,7 @@ onMounted(async () => {
       <ProductComponent
         v-for="(product, index) in products"
         :key="index"
+        :id="product.id"
         :name="product.name"
         :image="product.image"
         :category="product.group"
