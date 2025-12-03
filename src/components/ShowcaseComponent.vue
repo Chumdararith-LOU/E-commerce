@@ -4,11 +4,12 @@ import applesImg from '@/assets/Apples.png'
 </script>
 
 <template>
-  <div class="showcase-container" :style="{ backgroundImage: `url(${bgPattern})` }">
-    <div class="content">
-      <h1>Don't miss amazing<br />grocery deals</h1>
+  <div class="showcase-container" :style="{ backgroundImage: `url('${bgPattern}')` }">
+    
+    <div class="showcase-content">
+      <h1>Don't miss amazing<br>grocery deals</h1>
       <p>Sign up for the daily newsletter</p>
-
+      
       <div class="newsletter-form">
         <i class="fa-regular fa-paper-plane"></i>
         <input type="email" placeholder="Your email address" />
@@ -19,42 +20,44 @@ import applesImg from '@/assets/Apples.png'
     <div class="image-wrapper">
       <img :src="applesImg" alt="Fresh Apples" />
     </div>
+
   </div>
 </template>
 
 <style scoped>
 .showcase-container {
-  background-color: #fdf0e0;
+  background-color: #fdf0e0; 
   background-repeat: repeat;
-  background-size: 50%;
+  background-size: 50%; 
   background-position: center;
-
   border-radius: 20px;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 80px;
+  margin-top: 30px;
   overflow: hidden;
   position: relative;
 }
 
-.content {
+.showcase-content {
   z-index: 2;
   max-width: 50%;
+  display: block; 
 }
 
-.content h1 {
+.showcase-content h1 {
   font-family: 'Quicksand', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  color: #253d4e;
+  color: #253D4E;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
-.content p {
-  color: #7e7e7e;
+.showcase-content p {
+  color: #7E7E7E;
   font-size: 20px;
   margin-bottom: 35px;
 }
@@ -67,11 +70,11 @@ import applesImg from '@/assets/Apples.png'
   align-items: center;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .newsletter-form i {
-  color: #7e7e7e;
+  color: #7E7E7E;
   margin-right: 10px;
 }
 
@@ -80,12 +83,12 @@ import applesImg from '@/assets/Apples.png'
   outline: none;
   flex: 1;
   font-family: 'Quicksand', sans-serif;
-  color: #7e7e7e;
+  color: #7E7E7E;
   font-size: 14px;
 }
 
 .newsletter-form button {
-  background-color: #3bb77e;
+  background-color: #3BB77E;
   color: white;
   border: none;
   padding: 15px 35px;
@@ -109,8 +112,8 @@ import applesImg from '@/assets/Apples.png'
 }
 
 .image-wrapper img {
-  height: 110%;
+  height: 110%; 
   object-fit: contain;
-  margin-bottom: -20px;
+  margin-bottom: -20px; 
 }
 </style>
