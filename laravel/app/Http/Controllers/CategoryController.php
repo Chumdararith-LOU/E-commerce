@@ -17,12 +17,24 @@ class CategoryController extends Controller
     }
 
     public function getCategory($categoryId) {
-        return Category::findOrFail($categoryId);
-    }
+        $category = Category::findOrFail($categoryId);
+        
+        $this->authorize('view', $category);
+
+        return $category;    }
 
     public function updateCategory(Request $request, $categoryId) {
         $category = Category::findOrFail($categoryId);
         $category->update($request->all());
+        return $category;
+    }
+
+    public function updateStatus(Request $request, $categoryId) {
+        $category = Category::findOrFail($categoryId);
+
+        $this->authorize('updateStatus', $category);
+
+        $category->update(['status' => $request->status]);
         return $category;
     }
 
